@@ -1,0 +1,27 @@
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background: linear-gradient(135deg, #00bcd4, #ff4081);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: 700;
+}

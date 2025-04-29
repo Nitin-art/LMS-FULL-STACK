@@ -1,0 +1,33 @@
+/* User Profile */
+.user-profile {
+  background: linear-gradient(45deg, #ff9f9f, #f76c6c);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.user-profile h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.user-profile p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.user-profile button {
+  background: linear-gradient(45deg, #3f2b96, #6e7f7f);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.user-profile button:hover {
+  background: linear-gradient(45deg, #6e7f7f, #3f2b96);
+  transform: translateY(-2px);
+}

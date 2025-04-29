@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<div class="book-management">
+  <h2>Manage Books</h2>
+
+  <form (ngSubmit)="saveBook()">
+    <input type="text" [(ngModel)]="book.title" name="title" placeholder="Title" required>
+    <input type="text" [(ngModel)]="book.author" name="author" placeholder="Author" required>
+    <input type="text" [(ngModel)]="book.description" name="genre" placeholder="Genre" required>
+
+    <!-- Add Book button visible only to Admin -->
+    <button *ngIf="currentUserRole === 'ADMIN'" type="submit">{{ isEdit ? 'Update Book' : 'Add Book' }}</button>
+  </form>
+
+  <hr>
+
+  <!-- Edit/Delete Book buttons visible only to Admin -->
+  <div *ngFor="let b of books" class="book-card">
+    <h3>{{ b.title }}</h3>
+    <p><strong>Author:</strong> {{ b.author }}</p>
+    <p>{{ b.description }}</p>
+    <button *ngIf="currentUserRole === 'ADMIN'" (click)="editBook(b.id)">Edit</button>
+    <button *ngIf="currentUserRole === 'ADMIN' && b.id != null" (click)="deleteBook(b.id)">Delete</button>
+  </div>
+</div>

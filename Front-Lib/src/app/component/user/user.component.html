@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="user-management">
+  <h2>Manage Users</h2>
+
+  <form (ngSubmit)="saveUser()">
+    <input type="text" [(ngModel)]="user.name" name="name" placeholder="Name" required>
+    <input type="email" [(ngModel)]="user.email" name="email" placeholder="Email" required>
+    <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" required> <!-- Added Password -->
+
+    <select [(ngModel)]="user.role" name="role" required>
+      <option value="">Select Role</option>
+      <option value="ADMIN">Admin</option>
+      <option value="USER">User</option>
+    </select>
+    <button type="submit">{{ isEdit ? 'Update User' : 'Add User' }}</button>
+  </form>
+
+  <hr>
+
+  <div *ngFor="let u of users" class="user-card">
+    <h3>{{ u.name }}</h3>
+    <p><strong>Email:</strong> {{ u.email }}</p>
+    <p><strong>Role:</strong> {{ u.role }}</p>
+    <button (click)="editUser(u)">Edit</button>
+    <button (click)="deleteUser(u.id)">Delete</button>
+  </div>
+</div>
